@@ -19,6 +19,5 @@ app.get('/', (req, res) => {
 
 app.get('/getJson', async (req, res) => {
     const jsonData = await jsonGet.jsonGetquery().then();
-    console.log("jsonData: ", jsonData[0]);
     res.send(jsonData);
 })
