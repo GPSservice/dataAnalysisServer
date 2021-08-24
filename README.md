@@ -1,7 +1,9 @@
 [2021/08/24 update] (junsang)
 
-- JSON output data 파일 추가 (resultJSON.json)
-    => 우선 이걸로 작업하고 나중에 AWS올려지면 그떄 jsonFile -> jsonData변환 작업 빼주면 됨
+- index.js -> GET/getjson에 있는 jsonData변수가 resultJSON파일을 그대로 읽은 것
+    ===> 웹 브라우저에서는 index.js의 버튼을 누르면 데이터가 그대로 뜸
+- 혹시 몰라서 JSON output data 파일 추가 (resultJSON.json)
+        ==> 잘 안되면 직접 파일에 접근해서 진행할 것
 - DELETE gpsservice.sql
 
 [2021/08/21 update] (junsang)
