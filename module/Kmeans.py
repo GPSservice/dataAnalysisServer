@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[ ]:
+
+
+#!/usr/bin/env python
+# coding: utf-8
+
 # # 라이브러리
 from yellowbrick.cluster import KElbowVisualizer
 from sklearn.cluster import KMeans
@@ -71,7 +77,8 @@ def createDataList():
     for i in range(k):
         dataList[i] = {}
         dataList[i]['id']= i
-        dataList[i]['centroids'] = CentroidFunc(k)[i][0]        
+        dataList[i]['centroids'] = CentroidFunc(k)[i][0]
+        dataList[i]['population'] = Population(k)[i]
         dataList[i]['resultData'] = resultData()[i]        
     return dataList
 
@@ -83,6 +90,15 @@ def CentroidFunc(k):
         centroids_list[i].append({'lat' : centroids[i][0], 'lon' : centroids[i][1]})
     
     return centroids_list
+
+# population_list setting
+def Population(k):
+    _list=[]
+    for i in range(k):
+        population = len(df[df['labels']==i])
+        _list.append(population)
+
+    return _list
 
 # resultData setting
 def resultData():
@@ -191,3 +207,4 @@ def AveFunc(Group,k):
 # ## JSON파일로 만들기 ##
 # with open("./resultJSON.json", "w") as jsonFile:
 #     json.dump(mainFunction(), jsonFile)
+
